@@ -9,6 +9,27 @@
 
 [section:changelog Changelog]
 
+[heading 2.20, Boost 1.75]
+
+[*Bug fixes:]
+
+* Corrected the file counter that would be used in [link log.detailed.sink_backends.text_file `text_file_backend`] when generating the target file name (based on the pattern set by `set_target_file_name_pattern` method) when the log file is rotated. The backend used to use the next value of file counter, which could cause some counter values to be skipped on application restarts. ([github_issue 125])
+* Replaced a volatile version counter in `basic_sink_frontend` with an atomic. This should silence clang-cl warnings about deprecated uses of `volatile`. ([github_issue 128])
+* In the [class_sinks_asynchronous_sink] frontend, resolved a possible conflict between `flush` and `run` methods, if `run` is called from a user's thread instead of the internal dedicated thread spawned by the frontend. `run` and `feed_records` methods will wait for `flush` to complete, if one is in progress. Additionally, `stop` now explicitly doesn't wait for the ongoing record feeding operation to complete. ([github_issue 131])
+
+[heading 2.19, Boost 1.74]
+
+[*Bug fixes:]
+
+* The [link log.detailed.sink_backends.syslog syslog] sink backend now verifies the IP version of the local and target addresses set by user. The addresses must have the same IP version as was specified in the `ip_version` named parameter on the sink backend construction (by default, IPv4 is assumed). When an address is obtained as a result of host name resolution, only addresses with matching IP version are considered. ([github_issue 119])
+
+[*New Features:]
+
+* Move constructors and assignment operators of various components were marked `noexcept`.
+* Added a new [link log.detailed.utilities.manipulators.range `range_manip`] stream manipulator that can be used for outputting elements of a range, optionally separated by a delimiter.
+* Added a new [link log.detailed.utilities.manipulators.tuple `tuple_manip`] stream manipulator that can be used for outputting elements of a tuple or any other heterogeneous sequence, optionally separated by a delimiter.
+* Added a new [link log.detailed.utilities.manipulators.optional `optional_manip`] stream manipulator that can be used for outputting optionally present values.
+
 [heading 2.18, Boost 1.73]
 
 [*New Features:]

@@ -53,6 +53,9 @@
 
 # pragma GCC diagnostic push
 # pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
+# if (__clang_major__ >= 6)
+#  pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+# endif // (__clang_major__ >= 6)
 
 #elif defined(__GNUC__)
 
@@ -82,6 +85,7 @@
 
 # pragma GCC diagnostic push
 # pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
+# pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 # if (__GNUC__ >= 7)
 #  pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
 # endif // (__GNUC__ >= 7)
@@ -102,7 +106,7 @@
 
 // Greenhills C++
 
-#elif defined(__BORLANDC__)
+#elif defined(__BORLANDC__) && !defined(__clang__)
 
 // Borland C++
 

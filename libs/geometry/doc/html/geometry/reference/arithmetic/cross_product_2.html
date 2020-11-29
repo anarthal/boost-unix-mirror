@@ -27,7 +27,7 @@
 <a name="geometry.reference.arithmetic.cross_product_2"></a><a class="link" href="cross_product_2.html" title="cross_product">cross_product</a>
 </h4></div></div></div>
 <p>
-          <a class="indexterm" name="idm45032303260032"></a>
+          <a class="indexterm" name="idm45495599225024"></a>
 Computes the cross product of two vectors.
         </p>
 <h6>
@@ -43,7 +43,7 @@ Computes the cross product of two vectors.
         </h6>
 <p>
 </p>
-<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> <span class="identifier">ResultP</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">P1</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">P2</span><span class="special">&gt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> <span class="identifier">ResultP</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">P1</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">P2</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">enable_if_t</span><span class="special">&lt;</span> <span class="identifier">dimension</span><span class="special">&lt;</span> <span class="identifier">ResultP</span> <span class="special">&gt;::</span><span class="identifier">value</span> <span class="special">!=</span><span class="number">3</span><span class="special">||!</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">is_constructible</span><span class="special">&lt;</span> <span class="identifier">ResultP</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">coordinate_type</span><span class="special">&lt;</span> <span class="identifier">ResultP</span> <span class="special">&gt;::</span><span class="identifier">type</span> <span class="keyword">const</span> <span class="special">&amp;,</span> <span class="keyword">typename</span> <span class="identifier">coordinate_type</span><span class="special">&lt;</span> <span class="identifier">ResultP</span> <span class="special">&gt;::</span><span class="identifier">type</span> <span class="keyword">const</span> <span class="special">&amp;,</span> <span class="keyword">typename</span> <span class="identifier">coordinate_type</span><span class="special">&lt;</span> <span class="identifier">ResultP</span> <span class="special">&gt;::</span><span class="identifier">type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="special">&gt;::</span><span class="identifier">value</span><span class="special">,</span> <span class="keyword">int</span> <span class="special">&gt;&gt;</span>
 <span class="identifier">ResultP</span> <span class="identifier">cross_product</span><span class="special">(</span><span class="identifier">P1</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">p1</span><span class="special">,</span> <span class="identifier">P2</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">p2</span><span class="special">)</span></pre>
 <p>
         </p>
@@ -85,6 +85,28 @@ Computes the cross product of two vectors.
 <td>
                   <p>
                     ResultP
+                  </p>
+                </td>
+<td>
+                </td>
+<td>
+                  <p>
+                    -
+                  </p>
+                </td>
+<td>
+                  <p>
+                    Must be specified
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    std::enable_if_t&lt; dimension&lt; ResultP &gt;::value !=3||!
+                    std::is_constructible&lt; ResultP, coordinate_type&lt; ResultP
+                    &gt;::type , coordinate_type&lt; ResultP &gt;::type , coordinate_type&lt;
+                    ResultP &gt;::type &gt;::value, int &gt;
                   </p>
                 </td>
 <td>
