@@ -491,8 +491,8 @@ inline void enrich_intersection_points(Turns& turns,
     {
         detail::overlay::discard_closed_turns
             <
-            OverlayType,
-            target_operation
+                OverlayType,
+                target_operation
             >::apply(turns, clusters, geometry1, geometry2,
                      strategy);
         detail::overlay::discard_open_turns
@@ -524,7 +524,7 @@ inline void enrich_intersection_points(Turns& turns,
         detail::overlay::enrich_sort<Reverse1, Reverse2>(
                     mit->second, turns,
                     geometry1, geometry2,
-                    robust_policy, strategy.get_side_strategy());
+                    robust_policy, strategy.side()); // TODO: pass strategy
     }
 
     for (typename mapped_vector_type::iterator mit
@@ -554,7 +554,7 @@ inline void enrich_intersection_points(Turns& turns,
                 Reverse2,
                 OverlayType
             >(clusters, turns, target_operation,
-              geometry1, geometry2, strategy.get_side_strategy());
+              geometry1, geometry2, strategy.side()); // TODO: pass strategy
 
         detail::overlay::cleanup_clusters(turns, clusters);
     }

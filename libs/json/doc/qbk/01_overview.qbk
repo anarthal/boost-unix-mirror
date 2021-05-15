@@ -97,6 +97,21 @@ file in your project.
 #include <boost/json/src.hpp>
 ```
 
+[heading Standalone Shared Library]
+
+To build a standalone shared library, it is necessary to define the
+macros `BOOST_JSON_DECL` and `BOOST_JSON_CLASS_DECL` as appropriate
+for your toolchain. Example for MSVC:
+```
+// When building the DLL
+#define BOOST_JSON_DECL       __declspec(dllexport)
+#define BOOST_JSON_CLASS_DECL __declspec(dllexport)
+
+// When building the application which uses the DLL
+#define BOOST_JSON_DECL       __declspec(dllimport)
+#define BOOST_JSON_CLASS_DECL __declspec(dllimport)
+```
+
 [heading Embedded]
 
 Boost.JSON works great on embedded devices. The library uses local
@@ -125,32 +140,32 @@ building the library or including the function definitions:
 
 Boost.JSON has been tested with the following compilers:
 
-* clang-3.8
-* clang-4.0
-* clang-5.0
-* clang-6.0
-* clang-6
-* clang-7
-* clang-8
-* clang-9
-* gcc-4.8
-* gcc-4.9
-* gcc-5
-* gcc-6
-* gcc-7
-* gcc-8
-* gcc-9
-* msvc-14.1+
+* clang: 3.8, 4, 5, 6, 7, 8, 9, 10, 11
+* gcc: 4.8, 4.9, 5, 6, 7, 8, 9, 10
+* msvc: 14.0, 14.1, 14.2
 
 [h3 Quality Assurance]
 
 The development infrastructure for the library includes
 these per-commit analyses:
 
-* coverage reports
-* benchmark performance comparisons
-* compilation and tests on Travis, Azure Pipelines, Appveyor
-* fuzzing using clang-llvm and machine learning
+* Coverage reports
+* Benchmark performance comparisons
+* Compilation and tests on Drone.io, Azure Pipelines, Appveyor
+* Fuzzing using clang-llvm and machine learning
+
+[endsect]
+
+[/-----------------------------------------------------------------------------]
+
+[section Security Review (Bishop Fox)]
+
+As part of our commitment to producing the very finest C++ libraries that
+application developers can trust, the C++ Alliance has commissioned Bishop
+Fox to perform a security audit of the Boost.JSON library. The report
+is linked here:
+
+[@https://cppalliance.org/pdf/C%20Plus%20Plus%20Alliance%20-%20Boost%20JSON%20Security%20Assessment%202020%20-%20Assessment%20Report%20-%2020210317.pdf C Plus Plus Alliance - Boost JSON Security Assessment 2020 - Assessment Report - 20210317]
 
 [endsect]
 

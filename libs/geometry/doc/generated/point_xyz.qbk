@@ -118,6 +118,13 @@ class model::d3::point_xyz
 ]
 
 [heading Header]
+Either
+
+`#include <boost/geometry/geometries/geometries.hpp>`
+
+
+Or
+
 `#include <boost/geometry/geometries/point_xyz.hpp>`
 
 [include reference/geometries/point_xyz.qbk]

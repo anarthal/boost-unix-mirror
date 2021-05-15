@@ -94,6 +94,7 @@
               </td>
 <td>
                 <p>
+                  Reset the serializer for a new element. <br> <span class="silver">—</span><br>
                   Reset the serializer for a new string.
                 </p>
               </td>
@@ -101,14 +102,12 @@
 <tr>
 <td>
                 <p>
-                  <span class="bold"><strong><a class="link" href="boost__json__serializer/serializer.html" title="serializer::serializer">serializer</a></strong></span>
+                  <span class="bold"><strong><a class="link" href="boost__json__serializer/serializer.html" title="serializer::serializer">serializer</a> <span class="silver">[constructor]</span></strong></span>
                 </p>
               </td>
 <td>
                 <p>
-                  Move constructor (deleted)
-                </p>
-                <p>
+                  Move constructor (deleted) <br> <span class="silver">—</span><br>
                   Default constructor.
                 </p>
               </td>
@@ -116,7 +115,7 @@
 <tr>
 <td>
                 <p>
-                  <span class="bold"><strong><a class="link" href="boost__json__serializer/_serializer.html" title="serializer::~serializer">~serializer</a></strong></span>
+                  <span class="bold"><strong><a class="link" href="boost__json__serializer/_serializer.html" title="serializer::~serializer">~serializer</a> <span class="silver">[destructor]</span></strong></span>
                 </p>
               </td>
 <td>
@@ -134,8 +133,8 @@
 <p>
         This class traverses an instance of a library type and emits serialized JSON
         text by filling in one or more caller-provided buffers. To use, declare a
-        variable and call <a class="link" href="boost__json__serializer/reset/overload1.html" title="serializer::reset (1 of 5 overloads)"><code class="computeroutput"><span class="identifier">reset</span></code></a> with a pointer to the variable
-        you want to serialize. Then call <a class="link" href="boost__json__serializer/read/overload1.html" title="serializer::read (1 of 2 overloads)"><code class="computeroutput"><span class="identifier">read</span></code></a> over and over until <a class="link" href="boost__json__serializer/done.html" title="serializer::done"><code class="computeroutput"><span class="identifier">done</span></code></a> returns <code class="computeroutput"><span class="keyword">true</span></code>.
+        variable and call <a class="link" href="boost__json__serializer/reset.html" title="serializer::reset"><code class="computeroutput"><span class="identifier">reset</span></code></a> with a pointer to the variable
+        you want to serialize. Then call <a class="link" href="boost__json__serializer/read.html" title="serializer::read"><code class="computeroutput"><span class="identifier">read</span></code></a> over and over until <a class="link" href="boost__json__serializer/done.html" title="serializer::done"><code class="computeroutput"><span class="identifier">done</span></code></a> returns <code class="computeroutput"><span class="keyword">true</span></code>.
       </p>
 <h5>
 <a name="json.ref.boost__json__serializer.h3"></a>
@@ -151,7 +150,7 @@
     <span class="identifier">sr</span><span class="special">.</span><span class="identifier">reset</span><span class="special">(</span> <span class="special">&amp;</span><span class="identifier">jv</span> <span class="special">);</span>
     <span class="keyword">while</span><span class="special">(</span> <span class="special">!</span> <span class="identifier">sr</span><span class="special">.</span><span class="identifier">done</span><span class="special">()</span> <span class="special">)</span>
     <span class="special">{</span>
-        <span class="keyword">char</span> <span class="identifier">buf</span><span class="special">[</span> <span class="number">4000</span> <span class="special">];</span>
+        <span class="keyword">char</span> <span class="identifier">buf</span><span class="special">\[</span> <span class="number">4000</span> <span class="special">\];</span>
         <span class="identifier">os</span> <span class="special">&lt;&lt;</span> <span class="identifier">sr</span><span class="special">.</span><span class="identifier">read</span><span class="special">(</span> <span class="identifier">buf</span> <span class="special">);</span>
     <span class="special">}</span>
 <span class="special">}</span>

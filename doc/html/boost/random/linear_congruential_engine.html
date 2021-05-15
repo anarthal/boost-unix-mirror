@@ -54,8 +54,8 @@
   <span class="keyword">void</span> <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_9_7-bb"><span class="identifier">discard</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">uintmax_t</span><span class="special">)</span><span class="special">;</span>
 
   <span class="comment">// <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_14-bb">public static functions</a></span>
-  <span class="keyword">static</span> <span class="identifier">result_type</span> <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_14_1-bb"><span class="identifier">min</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <span class="keyword">static</span> <span class="identifier">result_type</span> <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_14_2-bb"><span class="identifier">max</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">result_type</span> <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_14_1-bb"><span class="identifier">min</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">result_type</span> <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_14_2-bb"><span class="identifier">max</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 
   <span class="comment">// <a class="link" href="linear_congruential_engine.html#id-1_3_35_5_6_23_1_1_1_15-bb">friend functions</a></span>
   <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> CharT<span class="special">,</span> <span class="keyword">typename</span> Traits<span class="special">&gt;</span> 
@@ -147,11 +147,11 @@
 <a name="id-1_3_35_5_6_23_1_1_1_14-bb"></a><code class="computeroutput">linear_congruential_engine</code> public static functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="identifier">result_type</span> <a name="id-1_3_35_5_6_23_1_1_1_14_1-bb"></a><span class="identifier">min</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">result_type</span> <a name="id-1_3_35_5_6_23_1_1_1_14_1-bb"></a><span class="identifier">min</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Returns the smallest value that the <code class="computeroutput"><code class="computeroutput"><a class="link" href="linear_congruential_engine.html" title="Class template linear_congruential_engine">linear_congruential_engine</a></code></code> can produce. </p>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">static</span> <span class="identifier">result_type</span> <a name="id-1_3_35_5_6_23_1_1_1_14_2-bb"></a><span class="identifier">max</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="identifier">result_type</span> <a name="id-1_3_35_5_6_23_1_1_1_14_2-bb"></a><span class="identifier">max</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Returns the largest value that the <code class="computeroutput"><code class="computeroutput"><a class="link" href="linear_congruential_engine.html" title="Class template linear_congruential_engine">linear_congruential_engine</a></code></code> can produce. </p>
 </li>
 </ol></div>

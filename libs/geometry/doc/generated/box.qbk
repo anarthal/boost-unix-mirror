@@ -46,22 +46,22 @@ class model::box
 ] [Default constructor, no initialization. ] [
 
 ]]
-[[``template<typename P1, typename P2, std::enable_if_t< ! std::is_copy_constructible< P1 >::value||! std::is_copy_constructible< P2 >::value||! std::is_convertible< P1 const &, Point >::value||! std::is_convertible< P2 const &, Point >::value, int >>
-box(P1 const & min_corner, P2 const & max_corner)``
+[[``template<typename P, std::enable_if_t< ! std::is_copy_constructible< P >::value, int >>
+box(Point const & min_corner, Point const & max_corner)``
 
-] [Constructor taking the minimum corner point and the maximum corner point. ] [[* P1 const &]: ['min_corner]:  
+] [Constructor taking the minimum corner point and the maximum corner point. ] [[* Point const &]: ['min_corner]:  
 
-[* P2 const &]: ['max_corner]:  
+[* Point const &]: ['max_corner]:  
 
 
 
 ]]
-[[``template<typename P1, typename P2, std::enable_if_t< std::is_copy_constructible< P1 >::value &&std::is_copy_constructible< P2 >::value &&std::is_convertible< P1 const &, Point >::value &&std::is_convertible< P2 const &, Point >::value, int >>
-box(P1 const & min_corner, P2 const & max_corner)``
+[[``template<typename P, std::enable_if_t< std::is_copy_constructible< P >::value, int >>
+box(Point const & min_corner, Point const & max_corner)``
 
-] [Constructor taking the minimum corner point and the maximum corner point. ] [[* P1 const &]: ['min_corner]:  
+] [Constructor taking the minimum corner point and the maximum corner point. ] [[* Point const &]: ['min_corner]:  
 
-[* P2 const &]: ['max_corner]:  
+[* Point const &]: ['max_corner]:  
 
 
 

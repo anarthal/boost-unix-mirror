@@ -14,8 +14,6 @@ json/allocators/background.html
 json/allocators/storage_ptr.html
 json/allocators/uses_allocator.html
 json/input_output.html
-json/input_output/parsing.html
-json/input_output/serializing.html
 json/examples.html
 json/frequently_asked_questions.html
 json/benchmarks.html
@@ -747,4 +745,5 @@ json/ref/boost__json__BOOST_STATIC_ASSERT.html
 json/ref/boost__json__get.html
 json/ref/boost__json__value_from.html
 json/ref/boost__json__value_to.html
+json/release_notes.html
 json/index.html

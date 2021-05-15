@@ -2,7 +2,7 @@
 // detail/push_options.hpp
 // ~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2020 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2021 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -85,7 +85,9 @@
 
 # pragma GCC diagnostic push
 # pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
-# pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+# if (__GNUC__ == 4 && __GNUC_MINOR__ >= 7) || (__GNUC__ > 4)
+#  pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+# endif // (__GNUC__ == 4 && __GNUC_MINOR__ >= 7) || (__GNUC__ > 4)
 # if (__GNUC__ >= 7)
 #  pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
 # endif // (__GNUC__ >= 7)

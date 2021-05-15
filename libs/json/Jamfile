@@ -9,8 +9,11 @@
 
 import ../config/checks/config : requires ;
 
-# These make sure we only build
-# on C++11 or later toolchains.
+# These make sure we only build on
+# compatible C++11 or later toolchains.
+obj check_basic_alignas : check/basic_alignas.cpp ;
+explicit check_basic_alignas ;
+
 constant c11-requires :
     [ requires
     cxx11_constexpr
@@ -18,6 +21,11 @@ constant c11-requires :
     cxx11_hdr_tuple
     cxx11_template_aliases
     cxx11_variadic_templates
+    ]
+    # We only require limited alignas support,
+    # so we have to use a custom check
+    [ check-target-builds
+    ..//check_basic_alignas cxx11_basic_alignas : : <build>no
     ]
     ;
 
